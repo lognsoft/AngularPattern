@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IFilme } from 'src/app/shared/models/IFilme';
 import { ServiceFilme } from 'src/app/shared/services/service-filme.service';
 import {Filme} from "../../../../shared/entities/Filme";
+import {IFavorito} from "../../../../shared/models/IFavorito";
+import {ServiceFavorito} from "../../../../shared/services/service-favorito.service";
+import {Favorito} from "../../../../shared/entities/Favorito";
 
 @Component({
   selector: 'app-home',
@@ -12,17 +15,38 @@ export class HomeComponent {
 
   protected Filmes:Array<IFilme> = new Array<IFilme>();
   protected Filme?:IFilme;
+  protected Favoritos:Array<IFavorito> = new Array<IFavorito>();
+  protected Favorito?:IFavorito;
 
-  constructor(private serviceFilme: ServiceFilme<IFilme>) {
 
+  constructor(
+    private serviceFilme: ServiceFilme<IFilme>,
+    private serviceFavorito: ServiceFavorito<IFavorito>
+  ) {
     this.FilmeEmitters();
-
+    this.FavoritoEmitters();
     ////////////////////////////////IMPLEMENTAR FAVORITO/////////////////////////////////////
   }
   private ngOnInit():void {
-
   }
-  FilmeEmitters(){
+  async FavoritoEmitters(){
+    // Instância das variáveis de serviço
+    // Obtém as listas de filmes e filme
+    this.Favoritos = this.serviceFavorito.ListData;
+    this.Favorito = this.serviceFavorito.SingleData;
+
+    // Inicializando ouvintes para atualizações
+    // Registra ouvintes para atualizações na lista de filmes e filme
+    this.serviceFavorito.ListEmitter.subscribe(favoritos => this.Favoritos = favoritos);
+    this.serviceFavorito.SingleEmitter.subscribe(favorito => this.Favorito = favorito);
+
+    // Inicializando métodos de requisição
+    // Chama os métodos para obter todos os filmes e um filme pelo ID
+    await this.serviceFavorito.GetAll();
+    await this.serviceFavorito.GetSingleById(4); // Exemplo de chamada com ID 8
+  }
+
+  async FilmeEmitters(){
     // Instância das variáveis de serviço
     // Obtém as listas de filmes e filme
     this.Filmes = this.serviceFilme.ListData;
@@ -35,7 +59,7 @@ export class HomeComponent {
 
     // Inicializando métodos de requisição
     // Chama os métodos para obter todos os filmes e um filme pelo ID
-    this.serviceFilme.GetAll();
-    this.serviceFilme.GetSingleById(8); // Exemplo de chamada com ID 8
+    await this.serviceFilme.GetAll();
+    await this.serviceFilme.GetSingleById(7); // Exemplo de chamada com ID 8
   }
 }

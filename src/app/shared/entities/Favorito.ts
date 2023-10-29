@@ -4,11 +4,13 @@ import { IFavorito } from "../models/IFavorito";
 export class Favorito implements IFavorito{
   id: number = 0;
   listaFavoritos: Array<IFilme>;
-  nome: string = "";
+  usuario: string = "";
 
-  constructor(id: number, listaFavoritos: Array<IFilme>, nome: string) {
-    this.id = id;
+  constructor(
+    listaFavoritos: Array<IFilme>,
+    nome: string
+  ) {
     this.listaFavoritos = listaFavoritos;
-    this.nome = nome;
+    this.usuario = nome;
   }
 }

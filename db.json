@@ -1,31 +1,34 @@
 {
   "filmes": [
     {
-      "Id": 6,
-      "Titulo": "Harry Potter"
+      "id": 6,
+      "titulo": "Harry Potter"
     },
     {
-      "Id": 7,
-      "Titulo": "Jogos Mortais"
+      "id": 7,
+      "titulo": "Jogos Mortais"
     },
     {
-      "Id": 0,
-      "Titulo": "O poderoso chefão",
-      "id": 8
+      "id": 0,
+      "titulo": "O poderoso chefão"
     }
   ],
   "favoritos": [
     {
       "id": 4,
-      "nome": "John Doe",
+      "usuario": "bruno",
       "listaFavoritos": [
         {
-          "id": 2,
-          "titulo": "O Poderoso Chefão"
+          "id": 0,
+          "titulo": "titanic"
         },
         {
-          "id": 5,
-          "titulo": "asd"
+          "id": 0,
+          "titulo": "faroveiros"
+        },
+        {
+          "id": 0,
+          "titulo": "blabla"
         }
       ]
     }

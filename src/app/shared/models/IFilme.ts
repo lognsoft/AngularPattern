@@ -1,4 +1,4 @@
 export interface IFilme {
-  Id:any,
-  Titulo:string,
+  id:any,
+  titulo:string,
 }

@@ -1,4 +1,19 @@
 <ul>
-    <li *ngFor="let filme of Filmes">{{ filme.Titulo }}</li>
+    <li *ngFor="let filme of Filmes">{{ filme.titulo }}</li>
+</ul>
+
+------------------------------------------------------
+
+<ul>
+  <li *ngFor="let favorito of Favoritos">
+    <span>ID: {{favorito.usuario}}</span>
+    <span>Usuario: {{favorito.usuario}}</span>
+    <ul>
+      <span>Filmes favoritos</span>
+      <li *ngFor="let filme of favorito.listaFavoritos">
+        {{ filme.titulo }}
+      </li>
+    </ul>
+  </li>
 </ul>
 
