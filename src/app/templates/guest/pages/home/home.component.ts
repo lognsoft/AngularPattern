@@ -14,6 +14,15 @@ export class HomeComponent {
   protected Filme?:IFilme;
 
   constructor(private serviceFilme: ServiceFilme<IFilme>) {
+
+    this.FilmeEmitters();
+
+    ////////////////////////////////IMPLEMENTAR FAVORITO/////////////////////////////////////
+  }
+  private ngOnInit():void {
+
+  }
+  FilmeEmitters(){
     // Instância das variáveis de serviço
     // Obtém as listas de filmes e filme
     this.Filmes = this.serviceFilme.ListData;
@@ -28,12 +37,5 @@ export class HomeComponent {
     // Chama os métodos para obter todos os filmes e um filme pelo ID
     this.serviceFilme.GetAll();
     this.serviceFilme.GetSingleById(8); // Exemplo de chamada com ID 8
-
-    ////////////////////////////////IMPLEMENTAR FAVORITO/////////////////////////////////////
-
-  }
-
-  private ngOnInit():void {
-
   }
 }

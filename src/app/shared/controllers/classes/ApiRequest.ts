@@ -22,6 +22,12 @@ export abstract class ApiRequest<T> implements IApiRequest<T> {
   // Construtor da classe
   protected constructor(protected http: HttpClient, protected router: string) {
     this.Router = router;
+
+
+    // Inicializando ouvintes para atualizações
+    // Registra ouvintes para atualizações na lista de filmes e filme
+    // this.ListEmitter.subscribe(filmes => this.ListData = filmes);
+    //this.SingleEmitter.subscribe(filme => this.SingleData = filme);
   };
 
   // Método para emitir eventos de atualização na lista de dados
@@ -55,6 +61,7 @@ export abstract class ApiRequest<T> implements IApiRequest<T> {
       this.ListData = res as Array<T>;
 
       this.ListEmitterLoad();
+
     } catch (error) {
       console.log(error);
     }
