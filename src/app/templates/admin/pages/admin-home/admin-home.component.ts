@@ -6,7 +6,7 @@ import { ServiceFilme } from 'src/app/shared/services/service-filme.service';
 @Component({
   selector: 'app-admin-home',
   templateUrl: './admin-home.component.html',
-  styleUrls: ['./admin-home.component.css']
+  styleUrls: ['./admin-home.component.scss']
 })
 export class AdminHomeComponent {
 
