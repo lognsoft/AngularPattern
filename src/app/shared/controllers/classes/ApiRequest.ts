@@ -16,16 +16,14 @@ export abstract class ApiRequest<T> implements IApiRequest<T> {
   public ListEmitter = new EventEmitter();
   public ListData : Array<T> = new Array<T>();
   public SingleEmitter = new EventEmitter();
-  public SingleData : T;
+  public SingleData? : T;
   public readonly HttpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   };
-
-  protected constructor(protected http: HttpClient, protected router:string, public singleData: T) {
+  protected constructor(protected http: HttpClient, protected router:string) {
     this.Router = router;
-    this.SingleData = singleData;
   };
 
   public ListEmitterLoad():void {
@@ -35,6 +33,7 @@ export abstract class ApiRequest<T> implements IApiRequest<T> {
   public SingleEmitterLoad():void {
     this.SingleEmitter.emit(this.SingleData);
   }
+
   public async GetSingleById(id: any): Promise<void> {
     try {
       const res = await this.http.get(`${this.URL}${this.Router}/${id}`).toPromise();
@@ -47,7 +46,7 @@ export abstract class ApiRequest<T> implements IApiRequest<T> {
     }
   }
 
-  public async Get(): Promise<void> {
+  public async GetAll(): Promise<void> {
     try {
       const res = await this.http.get(`${this.URL}${this.Router}`).toPromise();
 

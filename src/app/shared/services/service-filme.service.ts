@@ -16,7 +16,7 @@ import { EndPoints } from '../controllers/classes/EndPoints';
 })
 export class ServiceFilme<T extends IFilme> extends ApiRequest<IFilme>{
 
-  constructor(http:HttpClient, private filme:Filme) {
-    super(http, EndPoints.EndPoints.filmes, filme);
+  constructor(http:HttpClient) {
+    super(http, EndPoints.EndPoints.filmes);
   }
 }

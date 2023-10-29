@@ -6,12 +6,12 @@ export interface IApiRequest<T> {
   ListEmitter: EventEmitter<T>;
   ListData: Array<T>;
   SingleEmitter: EventEmitter<T>;
-  SingleData: T,
+  SingleData?: T,
   HttpOptions: object;
   ListEmitterLoad():void;
   SingleEmitterLoad():void;
   GetSingleById(id:any):void;
-  Get():void;
+  GetAll():void;
   Post(data:T):void;
   Put(id:any, data:T):void;
   Delete(id:any, data:T):void;

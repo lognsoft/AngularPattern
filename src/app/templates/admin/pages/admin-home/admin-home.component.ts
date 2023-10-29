@@ -9,13 +9,13 @@ import { ServiceFilme } from 'src/app/shared/services/service-filme.service';
   styleUrls: ['./admin-home.component.css']
 })
 export class AdminHomeComponent {
-  
+
 
   public Filmes:Array<IFilme> = new Array<IFilme>();
 
   constructor(private serviceFilme:ServiceFilme<IFilme>){
     this.Filmes = this.serviceFilme.ListData;
-    this.serviceFilme.Get();
+    this.serviceFilme.GetAll();
   }
 
   private ngOnInit():void {

@@ -19,21 +19,6 @@ import { IFilme } from '../models/IFilme';
 export class ServiceFavorito<T extends IFavorito> extends ApiRequest<IFavorito> {
 
   constructor(http:HttpClient) {
-    super(http, EndPoints.EndPoints.favoritos, new Favorito);
-  }
-
-  public async PutFavorite(filme: IFilme, favorito: IFavorito): Promise<void> {
-
-    try {
-      favorito.listaFavoritos.push(filme);
-
-      const res = await this.http.put(`${this.URL}${this.Router}/${favorito.id}`, JSON.stringify(favorito), this.HttpOptions).toPromise();
-
-      this.SingleData = res as T;
-
-      this.ListEmitterLoad();
-    } catch (error) {
-      console.log(`${this.URL} ${this.Router} ${error}`);
-    }
+    super(http, EndPoints.EndPoints.favoritos);
   }
 }
