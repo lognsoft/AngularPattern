@@ -1,4 +1,4 @@
-# Teste
+# Estrutura de módulos
 
 Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) na versão 16.2.4.
 
@@ -43,3 +43,7 @@ Conforme a estrutura do arquivo **"Gerenciamento de Módulos.pdf"**.
 ## Ajuda Adicional
 
 Para obter mais ajuda sobre o Angular CLI, use `ng help` ou consulte a página [Visão Geral e Referência de Comandos do Angular CLI](https://angular.io/cli).
+
+## Modelagem
+
+![Modelagem](https://github.com/lognsoft/AngularPattern/blob/master/modelagem/Estrutura%20de%20modulos.png?raw=true)
