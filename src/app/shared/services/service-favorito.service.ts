@@ -6,12 +6,12 @@
 // 5. Outros
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IFavorito } from '../models/IFavorito';
-import { Favorito } from '../entities/Favorito';
-import { ApiRequest } from '../controllers/classes/ApiRequest';
+import { IFavorito } from '../../core/models/IFavorito';
+import { Favorito } from '../../core/entities/Favorito';
+import { ApiRequest } from '../../core/controllers/classes/ApiRequest';
 
-import { EndPoints } from "../controllers/classes/EndPoints";
-import { IFilme } from '../models/IFilme';
+import { EndPoints } from "../../core/controllers/classes/EndPoints";
+import { IFilme } from '../../core/models/IFilme';
 
 @Injectable({
   providedIn: 'root'

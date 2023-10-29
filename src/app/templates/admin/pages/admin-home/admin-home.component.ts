@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IFilme } from 'src/app/shared/models/IFilme';
-import { Filme } from 'src/app/shared/entities/Filme';
+import { IFilme } from 'src/app/core/models/IFilme';
+import { Filme } from 'src/app/core/entities/Filme';
 import { ServiceFilme } from 'src/app/shared/services/service-filme.service';
 
 @Component({

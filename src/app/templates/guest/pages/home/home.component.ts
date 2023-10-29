@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IFilme } from 'src/app/shared/models/IFilme';
+import { IFilme } from 'src/app/core/models/IFilme';
 import { ServiceFilme } from 'src/app/shared/services/service-filme.service';
-import {IFavorito} from "../../../../shared/models/IFavorito";
+import {IFavorito} from "../../../../core/models/IFavorito";
 import {ServiceFavorito} from "../../../../shared/services/service-favorito.service";
 
 @Component({

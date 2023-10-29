@@ -6,10 +6,10 @@
 // 5. Outros
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IFilme } from '../models/IFilme';
-import { Filme } from '../entities/Filme';
-import { ApiRequest } from '../controllers/classes/ApiRequest';
-import { EndPoints } from '../controllers/classes/EndPoints';
+import { IFilme } from '../../core/models/IFilme';
+import { Filme } from '../../core/entities/Filme';
+import { ApiRequest } from '../../core/controllers/classes/ApiRequest';
+import { EndPoints } from '../../core/controllers/classes/EndPoints';
 
 @Injectable({
   providedIn: 'root'
