@@ -1,0 +1,9 @@
+<p>Informe um filme</p>
+<input type="text" #inputValue/>
+<button (click)="cadastrarFilme(inputValue.value)">Cadastrar</button>
+
+<ul>
+    <li *ngFor="let filme of Filmes">
+        {{filme.Titulo}}
+    </li>
+</ul>

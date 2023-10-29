@@ -1,0 +1,33 @@
+{
+  "filmes": [
+    {
+      "Id": 6,
+      "Titulo": "Harry Potter"
+    },
+    {
+      "Id": 7,
+      "Titulo": "Jogos Mortais"
+    },
+    {
+      "Id": 0,
+      "Titulo": "O poderoso chefão",
+      "id": 8
+    }
+  ],
+  "favoritos": [
+    {
+      "id": 4,
+      "nome": "John Doe",
+      "listaFavoritos": [
+        {
+          "id": 2,
+          "titulo": "O Poderoso Chefão"
+        },
+        {
+          "id": 5,
+          "titulo": "asd"
+        }
+      ]
+    }
+  ]
+}
