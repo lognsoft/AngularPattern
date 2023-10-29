@@ -1,6 +1,8 @@
 import { IFilme } from "./IFilme";
 
 export interface IFavorito {
+  id:any;
   usuario: string;
-  listaFavoritos: Array<IFilme>;
+  sobrenome:string;
+  filmesFavoritos: Array<IFilme>;
 }

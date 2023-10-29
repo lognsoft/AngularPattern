@@ -2,33 +2,40 @@
   "filmes": [
     {
       "id": 6,
-      "titulo": "Harry Potter"
+      "titulo": "Harry Potter",
+      "duracao": 120
     },
     {
       "id": 7,
-      "titulo": "Jogos Mortais"
+      "titulo": "Jogos Mortais",
+      "duracao": 120
     },
     {
       "id": 0,
-      "titulo": "O poderoso chefão"
+      "titulo": "O poderoso chefão",
+      "duracao": 120
     }
   ],
   "favoritos": [
     {
       "id": 4,
       "usuario": "bruno",
-      "listaFavoritos": [
+      "sobrenome": "lixeira",
+      "filmesFavoritos": [
         {
-          "id": 0,
-          "titulo": "titanic"
+          "id": 1,
+          "titulo": "titanic",
+          "duracao": 120
         },
         {
-          "id": 0,
-          "titulo": "faroveiros"
+          "id": 2,
+          "titulo": "faroveiros",
+          "duracao": 120
         },
         {
-          "id": 0,
-          "titulo": "blabla"
+          "id": 3,
+          "titulo": "blabla",
+          "duracao": 120
         }
       ]
     }

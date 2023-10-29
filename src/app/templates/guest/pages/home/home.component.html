@@ -6,12 +6,13 @@
 
 <ul>
   <li *ngFor="let favorito of Favoritos">
-    <span>ID: {{favorito.usuario}}</span>
-    <span>Usuario: {{favorito.usuario}}</span>
+    <p>ID: {{favorito.id}}</p>
+    <p>Usuario: {{favorito.usuario}}</p>
+    <p>Sobrenome: {{ favorito.sobrenome }}</p>
     <ul>
       <span>Filmes favoritos</span>
-      <li *ngFor="let filme of favorito.listaFavoritos">
-        {{ filme.titulo }}
+      <li *ngFor="let filme of favorito.filmesFavoritos">
+        {{ filme.titulo }} - {{ filme.duracao }}
       </li>
     </ul>
   </li>

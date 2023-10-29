@@ -26,7 +26,7 @@ export class HomeComponent {
   }
   private ngOnInit():void {
   }
-  async FavoritoEmitters(){
+  private async FavoritoEmitters(){
     // Instância das variáveis de serviço
     // Obtém as listas de filmes e filme
     this.Favoritos = this.serviceFavorito.ListData;
@@ -43,7 +43,7 @@ export class HomeComponent {
     await this.serviceFavorito.GetSingleById(4); // Exemplo de chamada com ID 8
   }
 
-  async FilmeEmitters(){
+  private async FilmeEmitters(){
     // Instância das variáveis de serviço
     // Obtém as listas de filmes e filme
     this.Filmes = this.serviceFilme.ListData;
