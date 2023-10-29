@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { IFilme } from 'src/app/shared/models/IFilme';
 import { ServiceFilme } from 'src/app/shared/services/service-filme.service';
-import {Filme} from "../../../../shared/entities/Filme";
 import {IFavorito} from "../../../../shared/models/IFavorito";
 import {ServiceFavorito} from "../../../../shared/services/service-favorito.service";
-import {Favorito} from "../../../../shared/entities/Favorito";
 
 @Component({
   selector: 'app-home',
@@ -17,7 +15,6 @@ export class HomeComponent {
   protected Filme?:IFilme;
   protected Favoritos:Array<IFavorito> = new Array<IFavorito>();
   protected Favorito?:IFavorito;
-
 
   constructor(
     private serviceFilme: ServiceFilme<IFilme>,
