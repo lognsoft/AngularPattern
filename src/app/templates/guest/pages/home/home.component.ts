@@ -13,19 +13,27 @@ export class HomeComponent {
   protected Filmes:Array<IFilme> = new Array<IFilme>();
   protected Filme?:IFilme;
 
-  constructor(private serviceFilme:ServiceFilme<IFilme>){
+  constructor(private serviceFilme: ServiceFilme<IFilme>) {
+    // Instância das variáveis de serviço
+    // Obtém as listas de filmes e filme
     this.Filmes = this.serviceFilme.ListData;
     this.Filme = this.serviceFilme.SingleData;
 
+    // Inicializando ouvintes para atualizações
+    // Registra ouvintes para atualizações na lista de filmes e filme
     this.serviceFilme.ListEmitter.subscribe(filmes => this.Filmes = filmes);
     this.serviceFilme.SingleEmitter.subscribe(filme => this.Filme = filme);
 
+    // Inicializando métodos de requisição
+    // Chama os métodos para obter todos os filmes e um filme pelo ID
     this.serviceFilme.GetAll();
-    this.serviceFilme.GetSingleById(8);
+    this.serviceFilme.GetSingleById(8); // Exemplo de chamada com ID 8
+
+    ////////////////////////////////IMPLEMENTAR FAVORITO/////////////////////////////////////
+
   }
 
   private ngOnInit():void {
-    // this.serviceFilme.ListEmitter.subscribe(filmes => this.Filmes = filmes);
-    // this.serviceFilme.SingleEmitter.subscribe(filme => this.Filme = filme);
+
   }
 }

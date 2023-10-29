@@ -19,6 +19,6 @@ import { IFilme } from '../models/IFilme';
 export class ServiceFavorito<T extends IFavorito> extends ApiRequest<IFavorito> {
 
   constructor(http:HttpClient) {
-    super(http, EndPoints.EndPoints.favoritos);
+    super(http, EndPoints.URL.favoritos);
   }
 }
