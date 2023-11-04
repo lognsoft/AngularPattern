@@ -20,13 +20,19 @@ export class HomeComponent {
     private serviceFilme: ServiceFilme<IFilme>,
     private serviceFavorito: ServiceFavorito<IFavorito>
   ) {
-    this.FilmeEmitters();
-    this.FavoritoEmitters();
+
     ////////////////////////////////IMPLEMENTAR FAVORITO/////////////////////////////////////
   }
-  private ngOnInit():void {
+  private async ngOnInit():Promise<void> {
+    await this.FilmeEmitters();
+    await this.FavoritoEmitters();
   }
   private async FavoritoEmitters(){
+    // Inicializando métodos de requisição
+    // Chama os métodos para obter todos os filmes e um filme pelo ID
+    await this.serviceFavorito.GetAll();
+    await this.serviceFavorito.GetSingleById(4); // Exemplo de chamada com ID 8
+
     // Instância das variáveis de serviço
     // Obtém as listas de filmes e filme
     this.Favoritos = this.serviceFavorito.ListData;
@@ -36,14 +42,14 @@ export class HomeComponent {
     // Registra ouvintes para atualizações na lista de filmes e filme
     this.serviceFavorito.ListEmitter.subscribe(favoritos => this.Favoritos = favoritos);
     this.serviceFavorito.SingleEmitter.subscribe(favorito => this.Favorito = favorito);
-
-    // Inicializando métodos de requisição
-    // Chama os métodos para obter todos os filmes e um filme pelo ID
-    await this.serviceFavorito.GetAll();
-    await this.serviceFavorito.GetSingleById(4); // Exemplo de chamada com ID 8
   }
 
   private async FilmeEmitters(){
+    // Inicializando métodos de requisição
+    // Chama os métodos para obter todos os filmes e um filme pelo ID
+    await this.serviceFilme.GetAll();
+    await this.serviceFilme.GetSingleById(7); // Exemplo de chamada com ID 8
+
     // Instância das variáveis de serviço
     // Obtém as listas de filmes e filme
     this.Filmes = this.serviceFilme.ListData;
@@ -53,10 +59,5 @@ export class HomeComponent {
     // Registra ouvintes para atualizações na lista de filmes e filme
     this.serviceFilme.ListEmitter.subscribe(filmes => this.Filmes = filmes);
     this.serviceFilme.SingleEmitter.subscribe(filme => this.Filme = filme);
-
-    // Inicializando métodos de requisição
-    // Chama os métodos para obter todos os filmes e um filme pelo ID
-    await this.serviceFilme.GetAll();
-    await this.serviceFilme.GetSingleById(7); // Exemplo de chamada com ID 8
   }
 }

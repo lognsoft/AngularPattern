@@ -14,8 +14,8 @@ export class AdminHomeComponent {
   public Filmes:Array<IFilme> = new Array<IFilme>();
 
   constructor(private serviceFilme:ServiceFilme<IFilme>){
-    this.Filmes = this.serviceFilme.ListData;
     this.serviceFilme.GetAll();
+    this.Filmes = this.serviceFilme.ListData;
   }
 
   private ngOnInit():void {
